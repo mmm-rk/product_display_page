@@ -13,9 +13,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(210, 69, 69, 1),
-        title: const Text('Sample Text'),
+      appBar: AppBar( //======== AppBar =========
+        backgroundColor: const Color.fromRGBO(67, 104, 80, 1),
+        title: const Text('LalaBuys Thrift Shop'),
         foregroundColor: Colors.white,
         actions: <Widget>[
           IconButton(
@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {}),
         ],
       ),
-      drawer: Drawer(
+      drawer: Drawer( //======== Drawer/Side bar =========
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
               accountEmail: const Text('joseph.markp@gmail.com'),
               currentAccountPicture: GestureDetector(
                 child: const CircleAvatar(
-                  backgroundColor: Color.fromRGBO(230, 186, 163, 1),
+                  backgroundColor: Color.fromRGBO(173, 188, 159, 1),
                   child: Icon(
                     Icons.person,
                     color: Colors.white,
@@ -42,10 +42,10 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               decoration: const BoxDecoration(
-                color: Color.fromRGBO(169, 68, 56, 1),
+                color: Color.fromRGBO(17, 138, 96, 1),
               ),
             ),
-            InkWell(
+            InkWell( //======== Drawer Items/Buttons =========
               onTap: () {},
               child: const ListTile(
                 title: Text('Home Page'),
@@ -63,21 +63,24 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: const ListTile(
                 title: Text('Orders'),
-                leading: Icon(Icons.shopping_basket),
+                leading: Icon(Icons.shopping_basket,
+                color: Colors.orangeAccent),
               ),
             ),
             InkWell(
               onTap: () {},
               child: const ListTile(
                 title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                leading: Icon(Icons.dashboard,
+                color: Colors.blueAccent),
               ),
             ),
             InkWell(
               onTap: () {},
               child: const ListTile(
                 title: Text('Favorites'),
-                leading: Icon(Icons.favorite),
+                leading: Icon(Icons.favorite,
+                color: Colors.redAccent,),
               ),
             ),
             const Divider(),
@@ -87,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                 title: Text('Settings'),
                 leading: Icon(
                   Icons.settings,
-                  color: Color.fromRGBO(210, 69, 69, 1),
+                  color: Color.fromRGBO(93, 175, 17, 1),
                 ),
               ),
             ),
@@ -97,31 +100,29 @@ class _HomePageState extends State<HomePage> {
                 title: Text('About Us'),
                 leading: Icon(
                   Icons.help,
-                  color: Color.fromRGBO(210, 69, 69, 1),
+                  color: Color.fromRGBO(93, 175, 17, 1),
                 ),
               ),
             ),
           ],
         ),
       ),
-      body: ListView(
+      body: ListView( //======== Body =========
         children: <Widget>[
           const Padding(
             padding: EdgeInsets.all(10),
             child: Text('Categories'),
           ),
 
-          //Horizontal List View of Categories
-          const HorizontalList(),
+          const HorizontalList(), //========== Horizontal List View of Categories ==========
           const Padding(
             padding: EdgeInsets.only(top: 45, left: 10, right: 10),
-            child: Text('Recent Products'),
+            child: Text('Available Products'),
           ),
 
-          //Grid View of Products
           Container(
             height: 700,
-            child: const Products(),
+            child: const Products(), //========= Grid View of Products ==========
           ),
         ],
       ),
